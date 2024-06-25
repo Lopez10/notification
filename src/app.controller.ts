@@ -7,7 +7,7 @@ export class AppController {
 	constructor(private readonly notificationService: NotificationService) {}
 
 	@MessagePattern('notification_created')
-	run(@Payload() data: unknown) {
+	run(@Payload() data: Record<string, unknown>) {
 		this.notificationService.handleNotification({ message: data });
 	}
 }

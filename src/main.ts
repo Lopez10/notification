@@ -16,9 +16,6 @@ async function bootstrap() {
 			},
 		},
 	);
-	await app
-		.listen()
-		.then(() => console.log('Microservice is listening'))
-		.catch((err) => console.error(err));
+	await app.listen();
 }
 bootstrap();
