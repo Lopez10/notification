@@ -1,10 +1,10 @@
 import { Controller } from '@nestjs/common';
-import { NotificationService } from './notification.service';
+import { CreateNotification } from '../application/create-notification.use-case';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 
 @Controller()
-export class AppController {
-	constructor(private readonly notificationService: NotificationService) {}
+export class NotificationController {
+	constructor(private readonly notificationService: CreateNotification) {}
 
 	@MessagePattern('notification_created')
 	run(@Payload() data: Record<string, unknown>) {
